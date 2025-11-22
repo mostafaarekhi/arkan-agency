@@ -1,80 +1,267 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa" dir="rtl">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>صفحه شخصی — مصطفی آرخی</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <main class="hero">
-      <div class="container">
-        <section class="right">
-          <div class="intro">
-            <p class="hello">سلام، من</p>
-            <h1 class="name">مصطفی <strong>آرخی</strong> هستم</h1>
-            <!-- <p class="role">تدوینگر و ادیتور ویدیو</p> -->
-          </div>
-          <div class="portrait-wrap">
-            <img class="bg" src="assets/bg.png" alt="background glow" />
-            <img class="portrait" src="assets/mostafa.png" alt="مصطفی آرخی" />
-          </div>
-        </section>
-        <section class="left">
-          <h2 class="subtitle">درباره من</h2>
-          <p class="about">
-            در زمینه ادیت و تدوین ویدیو فعالیت می‌کنم و بیشتر روی ویدیوهای
-            تبلیغاتی، آموزشی و محتوای شبکه‌های اجتماعی کار می‌کنم. سعی می‌کنم هر
-            پروژه را با دقت و توجه به جزئیات اجرا کنم تا پیام و ایده ویدیو به
-            ساده‌ترین و شفاف‌ترین شکل به مخاطب منتقل شود. علاوه بر رعایت اصول
-            فنی و زیبایی‌شناسی، توجه زیادی به ریتم، کات‌ها و جریان ویدیو دارم تا
-            بیننده تجربه‌ای روان و قابل فهم داشته باشد.
-          </p>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Revaiatt — سایت شخصی</title>
 
-          <h3 class="skills-title">مهارت ها</h3>
-          <ul class="skills">
-            <li><img src="assets/premiere.png" alt="Premiere" /></li>
-            <li><img src="assets/after.png" alt="After Effects" /></li>
-            <li><img src="assets/photoshop.png" alt="Photoshop" /></li>
-          </ul>
+  <!-- Vazirmatn (یا فونت دلخواه) -->
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
 
-          <div class="socials">
-            <div class="social-pair">
-              <a class="btn arrow" href="#" aria-label="ارسال پیام به من">
-                <img src="assets/down-right.svg" alt="arrow" />
-              </a>
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="سایت شخصی — معرفی، نمونه‌کارها، خدمات و تماس">
+</head>
+<body>
 
-              <a class="btn icon" href="#" aria-label="ارسال پیام">
-                <img src="assets/communication.svg" alt="تلگرام" />
-              </a>
-            </div>
-
-            <div class="social-pair">
-              <a class="btn arrow" href="#" aria-label="اینستاگرام">
-                <img src="assets/down-right.svg" alt="arrow" />
-              </a>
-
-              <a class="btn icon" href="#" aria-label="اینستاگرام">
-                <img src="assets/instagram.svg" alt="اینستاگرام" />
-              </a>
-            </div>
-
-            <div class="social-pair">
-              <a class="btn arrow" href="#" aria-label="واتساپ">
-                <img src="assets/down-right.svg" alt="arrow" />
-              </a>
-
-              <a class="btn icon" href="#" aria-label="واتساپ">
-                <img src="assets/whatsapp.svg" alt="واتساپ" />
-              </a>
-            </div>
-          </div>
-        </section>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo-circle">RV</div>
+        <div class="brand-text">
+          <div class="title">Revaiatt</div>
+          <div class="subtitle">سایت شخصی</div>
+        </div>
       </div>
-    </main>
-  </body>
+
+      <nav class="nav">
+        <a href="#home" class="nav-link">صفحه اصلی</a>
+        <a href="#services" class="nav-link">خدمات</a>
+        <a href="#portfolio" class="nav-link">نمونه‌کار</a>
+        <a href="#contact" class="nav-link cta">تماس با من</a>
+      </nav>
+
+      <button class="nav-toggle" aria-label="menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <h1>سلام — من فلانی هستم</h1>
+        <p class="lead">طراح فضای داخلی · تولیدکننده محتوا · مشاور فنی</p>
+        <p class="hero-tag">خلق تجربه‌های بصری و عملیاتی که نتیجه می‌دهند.</p>
+        <div class="hero-cta">
+          <a href="#portfolio" class="btn primary">دیدن نمونه‌کارها</a>
+          <a href="#contact" class="btn ghost">درخواست همکاری</a>
+        </div>
+        <div class="brand-strip">
+          <span>همکاری با:</span>
+          <div class="brand-logos-inline">
+            <!-- لوگوها را با تصویر واقعی جایگزین کن -->
+            <img src="assets/brand1.png" alt="brand1">
+            <img src="assets/brand2.png" alt="brand2">
+            <img src="assets/brand3.png" alt="brand3">
+            <img src="assets/brand4.png" alt="brand4">
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-media">
+        <div class="portrait-card">
+          <img src="assets/me.jpg" alt="عکس من">
+          <div class="portrait-badge">مشاوره آنلاین</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section about">
+    <div class="container two-col">
+      <div class="text">
+        <h2>درباره من</h2>
+        <p>اینجا متن دربارهٔ تو قرار می‌گیرد: سابقه، مهارت‌های کلیدی، رویکرد کاری و آنچه برای مشتری خلق می‌کنی. چند خط قانع‌کننده بنویس تا مخاطب ترغیب شود تماس بگیرد.</p>
+        <ul class="meta-list">
+          <li>۱۰+ سال تجربه</li>
+          <li>همکاری با شرکت‌ها و برندهای معتبر</li>
+          <li>تحویل دقیق و سر وقت</li>
+        </ul>
+      </div>
+      <div class="img-wrap">
+        <img src="assets/me-side.jpg" alt="عکس پروفایل">
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section services">
+    <div class="container">
+      <h2 class="section-title">تخصص‌ها و خدمات</h2>
+      <div class="cards-grid">
+        <article class="card">
+          <div class="icon">📐</div>
+          <h3>طراحی داخلی</h3>
+          <p>طراحی فضا بر اساس سبک زندگی و نیاز مشتری؛ از کانسپت تا نظارت اجرا.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">🎬</div>
+          <h3>تولید محتوا</h3>
+          <p>تولید ویدیوهای عمودی و افقی برای شبکه‌های اجتماعی و تبلیغات.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">⚙️</div>
+          <h3>نظارت فنی</h3>
+          <p>نظارت بر اجرا، کنترل کیفیت و هماهنگی تیم‌های کاری.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video portfolio (vertical) -->
+  <section id="portfolio" class="section portfolio">
+    <div class="container">
+      <h2 class="section-title">نمونه‌کارهای ویدیویی</h2>
+      <div class="video-grid">
+        <figure class="v-card">
+          <div class="v-thumb"> 
+            <!-- جای ویدیو: از تگ <video> یا embed استفاده کن -->
+            <div class="vertical-placeholder">ویدیو عمودی ۱</div>
+          </div>
+          <figcaption>تیزر محصول · ۰۰:۲۵</figcaption>
+        </figure>
+
+        <figure class="v-card">
+          <div class="v-thumb"><div class="vertical-placeholder">ویدیو عمودی ۲</div></div>
+          <figcaption>فیلم پروژه · ۰۰:۴۰</figcaption>
+        </figure>
+
+        <figure class="v-card">
+          <div class="v-thumb"><div class="vertical-placeholder">ویدیو عمودی ۳</div></div>
+          <figcaption>نمایش کارگاه · ۰۱:۱۵</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="section projects">
+    <div class="container">
+      <h2 class="section-title">پروژه‌های انجام شده</h2>
+      <div class="project-list">
+        <article class="project">
+          <div class="project-meta">
+            <h3>پروژه الف</h3>
+            <p class="muted">بازسازی داخلی خانه مسکونی · ۱۴۰۳</p>
+          </div>
+          <p>توضیح کوتاه درباره پروژه، چالش‌ها، راه‌حل‌ها و نتیجه (مثلاً کاهش هزینه ۲۰٪، افزایش کارایی).</p>
+        </article>
+
+        <article class="project">
+          <div class="project-meta">
+            <h3>پروژه ب</h3>
+            <p class="muted">طراحی نمایشگاهی · ۱۴۰۲</p>
+          </div>
+          <p>خلاصه‌ای از جریان کار، نقش تو و خروجی ملموس برای مشتری.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificates -->
+  <section class="section certificates">
+    <div class="container">
+      <h2 class="section-title">مدارک و دیپلم‌ها</h2>
+      <div class="cert-grid">
+        <div class="cert-card"><img src="assets/cert1.jpg" alt="گواهی ۱"></div>
+        <div class="cert-card"><img src="assets/cert2.jpg" alt="گواهی ۲"></div>
+        <div class="cert-card"><img src="assets/cert3.jpg" alt="گواهی ۳"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About 2 (text left, image right) -->
+  <section class="section about-alt">
+    <div class="container two-col reverse">
+      <div class="img-wrap"><img src="assets/project-hero.jpg" alt="تصویر پروژه"></div>
+      <div class="text">
+        <h2>یک داستان پروژه</h2>
+        <p>شرح تجربه قابل توجه؛ مثلاً نحوه نزدیک شدن به یک مشکل پیچیده و نتیجهٔ آن. این بخش برای اعتمادسازی عالی است.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image gallery -->
+  <section class="section gallery">
+    <div class="container">
+      <h2 class="section-title">نمونه‌کار تصویری</h2>
+      <div class="gallery-grid">
+        <img src="assets/img1.jpg" alt="">
+        <img src="assets/img2.jpg" alt="">
+        <img src="assets/img3.jpg" alt="">
+        <img src="assets/img4.jpg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section testimonials">
+    <div class="container">
+      <h2 class="section-title">نظرات</h2>
+      <div class="testi-row">
+        <blockquote class="testi">
+          <p>\"همکاری با فلانی تجربهٔ حرفه‌ای و باکیفیتی بود. توصیه می‌کنم.\"</p>
+          <cite>— علی، مدیر پروژه</cite>
+        </blockquote>
+
+        <blockquote class="testi">
+          <p>\"تحویل به‌موقع و توجه به جزئیات؛ نتیجه عالی شد.\"</p>
+          <cite>— سمیه، مشتری</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section contact">
+    <div class="container contact-grid">
+      <div class="contact-card">
+        <h2>ارتباط با من</h2>
+        <p>ایمیل، اینستاگرام، تلگرام یا فرم تماس — هر کانالی که ترجیح می‌دهی.</p>
+        <div class="contacts">
+          <a href="mailto:you@example.com" class="chip">you@example.com</a>
+          <a href="#" class="chip">instagram</a>
+          <a href="#" class="chip">telegram</a>
+        </div>
+      </div>
+
+      <form class="contact-form" action="#" method="post" onsubmit="return false;">
+        <label>نام</label>
+        <input type="text" name="name" placeholder="نام شما">
+        <label>ایمیل</label>
+        <input type="email" name="email" placeholder="email@domain">
+        <label>پیام</label>
+        <textarea name="message" rows="5" placeholder="متن پیام..."></textarea>
+        <button class="btn primary" type="submit">ارسال پیام</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© تمامی حقوق محفوظ است — Revaiatt</div>
+      <div class="small-links">
+        <a href="#privacy">حریم خصوصی</a>
+        <a href="#terms">قوانین</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // small nav toggle for mobile
+    const btn = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+    btn.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !open);
+      nav.classList.toggle('open');
+    });
+  </script>
+</body>
 </html>
