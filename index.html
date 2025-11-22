@@ -1,267 +1,149 @@
-<!doctype html>
-<html lang="fa" dir="rtl">
+<!DOCTYPE html>
+<html lang="fa">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Revaiatt — سایت شخصی</title>
-
-  <!-- Vazirmatn (یا فونت دلخواه) -->
-  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
-  <meta name="description" content="سایت شخصی — معرفی، نمونه‌کارها، خدمات و تماس">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>رزومه شخصی</title>
+  <style>
+    body {margin:0;font-family:Tahoma, sans-serif;line-height:1.8;color:#333;}
+    header {background:#222;color:#fff;padding:15px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;}
+    header .logo {font-weight:bold;font-size:20px;}
+    nav ul {list-style:none;display:flex;gap:20px;margin:0;padding:0;}
+    nav a {color:#fff;text-decoration:none;font-weight:bold;}
+    section {padding:60px 20px;text-align:center;}
+    h2 {margin-bottom:20px;color:#007BFF;}
+    .hero {background:#f4f4f4;padding:100px 20px;}
+    .hero h1 {font-size:32px;margin-bottom:10px;}
+    .brands img {height:50px;margin:10px;}
+    .about {display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;text-align:right;}
+    .about img {width:250px;border-radius:10px;}
+    .services {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+    .service {background:#fafafa;padding:20px;border-radius:10px;}
+    .service i {font-size:40px;margin-bottom:10px;color:#007BFF;}
+    .portfolio video {width:200px;height:350px;margin:10px;border-radius:10px;}
+    .projects,.certificates,.gallery,.testimonials {background:#f9f9f9;}
+    .certificates img,.gallery img {width:200px;margin:10px;border-radius:10px;}
+    .testimonials blockquote {background:#fff;padding:20px;margin:20px;border-left:5px solid #007BFF;text-align:right;}
+    .contact a {display:inline-block;margin:10px;padding:10px 20px;background:#007BFF;color:#fff;text-decoration:none;border-radius:5px;}
+    footer {background:#222;color:#fff;text-align:center;padding:20px;}
+  </style>
 </head>
 <body>
 
   <!-- Header -->
-  <header class="header">
-    <div class="container header-inner">
-      <div class="brand">
-        <div class="logo-circle">RV</div>
-        <div class="brand-text">
-          <div class="title">Revaiatt</div>
-          <div class="subtitle">سایت شخصی</div>
-        </div>
-      </div>
-
-      <nav class="nav">
-        <a href="#home" class="nav-link">صفحه اصلی</a>
-        <a href="#services" class="nav-link">خدمات</a>
-        <a href="#portfolio" class="nav-link">نمونه‌کار</a>
-        <a href="#contact" class="nav-link cta">تماس با من</a>
-      </nav>
-
-      <button class="nav-toggle" aria-label="menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+  <header>
+    <div class="logo">لوگو</div>
+    <nav>
+      <ul>
+        <li><a href="#hero">خانه</a></li>
+        <li><a href="#about">درباره من</a></li>
+        <li><a href="#contact">تماس</a></li>
+      </ul>
+    </nav>
   </header>
 
   <!-- Hero -->
-  <section id="home" class="hero">
-    <div class="container hero-grid">
-      <div class="hero-text">
-        <h1>سلام — من فلانی هستم</h1>
-        <p class="lead">طراح فضای داخلی · تولیدکننده محتوا · مشاور فنی</p>
-        <p class="hero-tag">خلق تجربه‌های بصری و عملیاتی که نتیجه می‌دهند.</p>
-        <div class="hero-cta">
-          <a href="#portfolio" class="btn primary">دیدن نمونه‌کارها</a>
-          <a href="#contact" class="btn ghost">درخواست همکاری</a>
-        </div>
-        <div class="brand-strip">
-          <span>همکاری با:</span>
-          <div class="brand-logos-inline">
-            <!-- لوگوها را با تصویر واقعی جایگزین کن -->
-            <img src="assets/brand1.png" alt="brand1">
-            <img src="assets/brand2.png" alt="brand2">
-            <img src="assets/brand3.png" alt="brand3">
-            <img src="assets/brand4.png" alt="brand4">
-          </div>
-        </div>
-      </div>
+  <section id="hero" class="hero">
+    <h1>سلام؛ من فلانی هستم</h1>
+    <p>متخصص استراتژی محتوا و مدیریت شبکه‌های اجتماعی</p>
+  </section>
 
-      <div class="hero-media">
-        <div class="portrait-card">
-          <img src="assets/me.jpg" alt="عکس من">
-          <div class="portrait-badge">مشاوره آنلاین</div>
-        </div>
-      </div>
+  <!-- Brands -->
+  <section class="brands">
+    <h2>همکاری با برندها</h2>
+    <div>
+      <img src="brand1.png" alt="Brand1">
+      <img src="brand2.png" alt="Brand2">
+      <img src="brand3.png" alt="Brand3">
     </div>
   </section>
 
   <!-- About -->
-  <section id="about" class="section about">
-    <div class="container two-col">
-      <div class="text">
-        <h2>درباره من</h2>
-        <p>اینجا متن دربارهٔ تو قرار می‌گیرد: سابقه، مهارت‌های کلیدی، رویکرد کاری و آنچه برای مشتری خلق می‌کنی. چند خط قانع‌کننده بنویس تا مخاطب ترغیب شود تماس بگیرد.</p>
-        <ul class="meta-list">
-          <li>۱۰+ سال تجربه</li>
-          <li>همکاری با شرکت‌ها و برندهای معتبر</li>
-          <li>تحویل دقیق و سر وقت</li>
-        </ul>
-      </div>
-      <div class="img-wrap">
-        <img src="assets/me-side.jpg" alt="عکس پروفایل">
-      </div>
+  <section id="about" class="about">
+    <div>
+      <h2>درباره من</h2>
+      <p>من در زمینه استراتژی محتوا، سناریونویسی و مدیریت شبکه‌های اجتماعی فعالیت می‌کنم و به برندها کمک می‌کنم محتوای اثرگذار خلق کنند.</p>
     </div>
+    <img src="me.jpg" alt="عکس من">
   </section>
 
   <!-- Services -->
-  <section id="services" class="section services">
-    <div class="container">
-      <h2 class="section-title">تخصص‌ها و خدمات</h2>
-      <div class="cards-grid">
-        <article class="card">
-          <div class="icon">📐</div>
-          <h3>طراحی داخلی</h3>
-          <p>طراحی فضا بر اساس سبک زندگی و نیاز مشتری؛ از کانسپت تا نظارت اجرا.</p>
-        </article>
-
-        <article class="card">
-          <div class="icon">🎬</div>
-          <h3>تولید محتوا</h3>
-          <p>تولید ویدیوهای عمودی و افقی برای شبکه‌های اجتماعی و تبلیغات.</p>
-        </article>
-
-        <article class="card">
-          <div class="icon">⚙️</div>
-          <h3>نظارت فنی</h3>
-          <p>نظارت بر اجرا، کنترل کیفیت و هماهنگی تیم‌های کاری.</p>
-        </article>
-      </div>
+  <section class="services">
+    <h2>تخصص‌ها و خدمات</h2>
+    <div class="service">
+      <i>📱</i>
+      <h3>مدیریت شبکه‌های اجتماعی</h3>
+      <p>برنامه‌ریزی پست‌ها، استوری‌ها و ریلزها</p>
+    </div>
+    <div class="service">
+      <i>✍️</i>
+      <h3>سناریونویسی</h3>
+      <p>روایت برندمحور و داستان‌گویی</p>
+    </div>
+    <div class="service">
+      <i>📊</i>
+      <h3>تحلیل محتوا</h3>
+      <p>تحلیل داده‌ها برای رشد برند</p>
+    </div>
+    <div class="service">
+      <i>🤖</i>
+      <h3>تولید محتوا با هوش مصنوعی</h3>
+      <p>تصویر، ویدیو و موسیقی</p>
     </div>
   </section>
 
-  <!-- Video portfolio (vertical) -->
-  <section id="portfolio" class="section portfolio">
-    <div class="container">
-      <h2 class="section-title">نمونه‌کارهای ویدیویی</h2>
-      <div class="video-grid">
-        <figure class="v-card">
-          <div class="v-thumb"> 
-            <!-- جای ویدیو: از تگ <video> یا embed استفاده کن -->
-            <div class="vertical-placeholder">ویدیو عمودی ۱</div>
-          </div>
-          <figcaption>تیزر محصول · ۰۰:۲۵</figcaption>
-        </figure>
-
-        <figure class="v-card">
-          <div class="v-thumb"><div class="vertical-placeholder">ویدیو عمودی ۲</div></div>
-          <figcaption>فیلم پروژه · ۰۰:۴۰</figcaption>
-        </figure>
-
-        <figure class="v-card">
-          <div class="v-thumb"><div class="vertical-placeholder">ویدیو عمودی ۳</div></div>
-          <figcaption>نمایش کارگاه · ۰۱:۱۵</figcaption>
-        </figure>
-      </div>
-    </div>
+  <!-- Portfolio -->
+  <section class="portfolio">
+    <h2>نمونه کارها (ویدیو)</h2>
+    <video controls src="work1.mp4"></video>
+    <video controls src="work2.mp4"></video>
   </section>
 
   <!-- Projects -->
-  <section class="section projects">
-    <div class="container">
-      <h2 class="section-title">پروژه‌های انجام شده</h2>
-      <div class="project-list">
-        <article class="project">
-          <div class="project-meta">
-            <h3>پروژه الف</h3>
-            <p class="muted">بازسازی داخلی خانه مسکونی · ۱۴۰۳</p>
-          </div>
-          <p>توضیح کوتاه درباره پروژه، چالش‌ها، راه‌حل‌ها و نتیجه (مثلاً کاهش هزینه ۲۰٪، افزایش کارایی).</p>
-        </article>
-
-        <article class="project">
-          <div class="project-meta">
-            <h3>پروژه ب</h3>
-            <p class="muted">طراحی نمایشگاهی · ۱۴۰۲</p>
-          </div>
-          <p>خلاصه‌ای از جریان کار، نقش تو و خروجی ملموس برای مشتری.</p>
-        </article>
-      </div>
-    </div>
+  <section class="projects">
+    <h2>پروژه‌های انجام شده</h2>
+    <p>پروژه‌های بین‌المللی و داخلی با برندهای مختلف</p>
   </section>
 
   <!-- Certificates -->
-  <section class="section certificates">
-    <div class="container">
-      <h2 class="section-title">مدارک و دیپلم‌ها</h2>
-      <div class="cert-grid">
-        <div class="cert-card"><img src="assets/cert1.jpg" alt="گواهی ۱"></div>
-        <div class="cert-card"><img src="assets/cert2.jpg" alt="گواهی ۲"></div>
-        <div class="cert-card"><img src="assets/cert3.jpg" alt="گواهی ۳"></div>
-      </div>
-    </div>
+  <section class="certificates">
+    <h2>مدارک و دیپلم‌ها</h2>
+    <img src="cert1.jpg" alt="مدرک 1">
+    <img src="cert2.jpg" alt="مدرک 2">
   </section>
 
-  <!-- About 2 (text left, image right) -->
-  <section class="section about-alt">
-    <div class="container two-col reverse">
-      <div class="img-wrap"><img src="assets/project-hero.jpg" alt="تصویر پروژه"></div>
-      <div class="text">
-        <h2>یک داستان پروژه</h2>
-        <p>شرح تجربه قابل توجه؛ مثلاً نحوه نزدیک شدن به یک مشکل پیچیده و نتیجهٔ آن. این بخش برای اعتمادسازی عالی است.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Image gallery -->
-  <section class="section gallery">
-    <div class="container">
-      <h2 class="section-title">نمونه‌کار تصویری</h2>
-      <div class="gallery-grid">
-        <img src="assets/img1.jpg" alt="">
-        <img src="assets/img2.jpg" alt="">
-        <img src="assets/img3.jpg" alt="">
-        <img src="assets/img4.jpg" alt="">
-      </div>
-    </div>
+  <!-- Gallery -->
+  <section class="gallery">
+    <h2>نمونه کارها (عکس)</h2>
+    <img src="gallery1.jpg" alt="نمونه کار 1">
+    <img src="gallery2.jpg" alt="نمونه کار 2">
   </section>
 
   <!-- Testimonials -->
-  <section class="section testimonials">
-    <div class="container">
-      <h2 class="section-title">نظرات</h2>
-      <div class="testi-row">
-        <blockquote class="testi">
-          <p>\"همکاری با فلانی تجربهٔ حرفه‌ای و باکیفیتی بود. توصیه می‌کنم.\"</p>
-          <cite>— علی، مدیر پروژه</cite>
-        </blockquote>
-
-        <blockquote class="testi">
-          <p>\"تحویل به‌موقع و توجه به جزئیات؛ نتیجه عالی شد.\"</p>
-          <cite>— سمیه، مشتری</cite>
-        </blockquote>
-      </div>
-    </div>
+  <section class="testimonials">
+    <h2>نظرات همکاران</h2>
+    <blockquote>
+      <p>"ایشان همکاری عالی داشتند و پروژه را به بهترین شکل انجام دادند."</p>
+      <cite>- کارفرما 1</cite>
+    </blockquote>
+    <blockquote>
+      <p>"خلاقیت و دقت ایشان مثال‌زدنی است."</p>
+      <cite>- کارفرما 2</cite>
+    </blockquote>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="section contact">
-    <div class="container contact-grid">
-      <div class="contact-card">
-        <h2>ارتباط با من</h2>
-        <p>ایمیل، اینستاگرام، تلگرام یا فرم تماس — هر کانالی که ترجیح می‌دهی.</p>
-        <div class="contacts">
-          <a href="mailto:you@example.com" class="chip">you@example.com</a>
-          <a href="#" class="chip">instagram</a>
-          <a href="#" class="chip">telegram</a>
-        </div>
-      </div>
-
-      <form class="contact-form" action="#" method="post" onsubmit="return false;">
-        <label>نام</label>
-        <input type="text" name="name" placeholder="نام شما">
-        <label>ایمیل</label>
-        <input type="email" name="email" placeholder="email@domain">
-        <label>پیام</label>
-        <textarea name="message" rows="5" placeholder="متن پیام..."></textarea>
-        <button class="btn primary" type="submit">ارسال پیام</button>
-      </form>
-    </div>
+  <section id="contact" class="contact">
+    <h2>تماس با من</h2>
+    <a href="mailto:youremail@example.com">ایمیل</a>
+    <a href="tel:+989123456789">تلفن</a>
+    <a href="https://instagram.com/yourprofile">اینستاگرام</a>
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div>© تمامی حقوق محفوظ است — Revaiatt</div>
-      <div class="small-links">
-        <a href="#privacy">حریم خصوصی</a>
-        <a href="#terms">قوانین</a>
-      </div>
-    </div>
+  <footer>
+    <p>© 2025 فلانی - تمامی حقوق محفوظ است</p>
   </footer>
 
-  <script>
-    // small nav toggle for mobile
-    const btn = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('.nav');
-    btn.addEventListener('click', () => {
-      const open = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', !open);
-      nav.classList.toggle('open');
-    });
-  </script>
 </body>
 </html>
