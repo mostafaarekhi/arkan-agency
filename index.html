@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>رزومه و نمونه‌کار — مستفا</title>
-  <meta name="description" content="سلام! من مستفا هستم — طراح برندینگ و هویت بصری. اینجا رزومه، خدمات، نمونه‌کارها، مدارک و راه‌های تماس من است." />
+  <meta name="description" content="سلام! اینجا شرکت تبلیغاتی آرکانه — طراح برندینگ و هویت بصری. اینجا رزومه، خدمات، نمونه‌کارها، مدارک و راه‌های تماس من است." />
 
   <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="رزومه و نمونه‌کار — مستفا" />
+  <meta property="og:title" content="سلام! اینجا شرکت تبلیغاتی آرکانه" />
   <meta property="og:description" content="طراح برندینگ و هویت بصری. همکاری با برندهای مختلف، نمونه‌کارها، پروژه‌ها و مدارک." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://username.github.io/repository" />
@@ -23,13 +23,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
+     #about .muted {
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 1.8;
+  }
     :root{
       --bg:#0f1115;
       --surface:#151922;
       --text:#e9eef7;
-      --muted:#aab3c5;
-      --brand:#5cc8ff;
-      --brand-2:#7af0ce;
+      --muted:#c5b9aa;
+      --brand:#1a3e6e;
+      --brand-2:#3e68a1;
       --danger:#ff6b6b;
       --shadow:0 10px 30px rgba(0,0,0,.35);
       --radius:14px;
@@ -48,7 +53,7 @@
     .container{max-width:var(--container); margin:0 auto; padding:0 20px}
     .btn{
       display:inline-block; padding:10px 18px; border-radius:10px; background:var(--brand);
-      color:#091321; font-weight:700; box-shadow:var(--shadow); transition:.25s ease;
+      color:rgb(255, 255, 255); font-weight:700; box-shadow:var(--shadow); transition:.25s ease;
     }
     .btn:hover{transform:translateY(-2px); background:var(--brand-2)}
     /* استایل دکمه‌های تماس */
@@ -104,7 +109,7 @@
       color:var(--text); font-weight:600; padding:8px 10px; border-radius:8px; transition:.25s ease;
     }
     .menu a:hover{background:rgba(255,255,255,.08)}
-    .menu a.active{background:var(--brand); color:#091321}
+    
     .menu-toggle{display:none}
     @media (max-width:900px){
       .menu-toggle{display:inline-flex; padding:10px; border:1px solid rgba(255,255,255,.12); border-radius:10px}
@@ -128,20 +133,42 @@
     .section-title{font-size:24px; font-weight:800}
     .section-desc{color:var(--muted)}
 
-    /* Brands slider */
-    .brands{
-      background:var(--surface); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow);
-      overflow:hidden;
-    }
-    .brands-track{
-      display:flex; gap:36px; align-items:center; animation:scroll 30s linear infinite;
-    }
-    .brands-track img{height:40px; filter:grayscale(100%) brightness(.95); opacity:.85; transition:.2s}
-    .brands-track img:hover{filter:none; opacity:1}
-    @keyframes scroll{
-      0%{transform:translateX(0)}
-      100%{transform:translateX(-50%)}
-    }
+/* Brands slider */
+.brands {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.brands-track {
+  display: flex;          /* مهم: فلکس برای فاصله و اسکرول */
+  gap: 85px;              /* فاصله بین لوگوها */
+  align-items: center;
+}
+
+.brands-track img {
+  height: 40px;
+  filter: grayscale(100%) brightness(.95);
+  opacity: .85;
+  transition: .2s;
+}
+
+.brands-track img:hover {
+  filter: none;
+  opacity: 1;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* نصف طول track برای لوپ */
+  }
+}
+
 
     /* About two-column */
     .grid-2{
@@ -252,11 +279,10 @@
   <!-- Hero -->
   <section id="hero" class="hero" aria-labelledby="hero-title">
     <div class="container">
-      <h1 id="hero-title">سلام؛ من مستفا هستم</h1>
-      <p>طراح برندینگ و هویت بصری با تمرکز بر لوگوهای مینیمال، آیکون‌های سه‌بعدی و روایت فرهنگی. من به برندها کمک می‌کنم ظاهرشان همان‌قدر که داستانشان قوی‌ست، صیقل‌خورده و ماندگار باشد.</p>
-      <div class="cta">
-        <a class="btn" href="#contact">شروع همکاری</a>
-        <a class="btn" href="#portfolio" aria-label="مشاهده نمونه‌کارها">مشاهده نمونه‌کار</a>
+      <h1 id="hero-title">شرکت تبلیغاتی آرکان</h1>
+طراح استراتژی محتوا و هویت دیجیتال، با تمرکز بر رشد واقعی برندها در اینستاگرام.<br>
+به کسب‌وکارها کمک می‌کنم پیام و هویت‌شان دقیق و حرفه‌ای دیده شود تا اثرگذاری واقعی داشته باشد.<div class="cta">
+        <a class="btn" href="#portfolio" aria-label="مشاهده نمونه‌کارها">مشاهده نمونه‌کارها</a>
       </div>
     </div>
   </section>
@@ -266,7 +292,6 @@
     <div class="container">
       <div class="section-head">
         <h2 class="section-title" id="brands-title">همکاری با برندهای مختلف</h2>
-        <p class="section-desc">منتخبی از لوگوهای برندهایی که با آن‌ها کار کرده‌ام</p>
       </div>
       <div class="brands" role="region" aria-label="لوگوهای برندها">
         <div class="brands-track">
@@ -277,12 +302,6 @@
           <img loading="lazy" src="assets/brand-04.png" alt="Brand 04">
           <img loading="lazy" src="assets/brand-05.png" alt="Brand 05">
           <img loading="lazy" src="assets/brand-06.png" alt="Brand 06">
-          <img loading="lazy" src="assets/brand-01.png" alt="Brand 01 duplicate">
-          <img loading="lazy" src="assets/brand-02.png" alt="Brand 02 duplicate">
-          <img loading="lazy" src="assets/brand-03.png" alt="Brand 03 duplicate">
-          <img loading="lazy" src="assets/brand-04.png" alt="Brand 04 duplicate">
-          <img loading="lazy" src="assets/brand-05.png" alt="Brand 05 duplicate">
-          <img loading="lazy" src="assets/brand-06.png" alt="Brand 06 duplicate">
         </div>
       </div>
     </div>
@@ -293,11 +312,25 @@
     <div class="container grid-2">
       <div class="card">
         <h2 class="section-title" id="about-title">درباره من</h2>
-        <p class="muted">من یک طراح برند و خلاقه‌ام که بین سنت و تکنولوژی پل می‌زنم؛ از نمادهای ایرانی الهام می‌گیرم و آن‌ها را به زبان مدرن بصری ترجمه می‌کنم. در مسیر پروژه‌ها به شفافیت، انعطاف‌پذیری و کیفیت وسواس‌گونه پایبندم.</p>
-        <ul>
-          <li><strong>تمرکز:</strong> لوگو مینیمال، آیکون سه‌بعدی، سیستم هویت بصری</li>
-          <li><strong>ارزش‌ها:</strong> وضوح، دوام، داستان‌گو</li>
-          <li><strong>خروجی‌ها:</strong> بسته برند، کیت UI، راهنمای سبک</li>
+        <p class="muted">من مریم ایگدری هستم؛ مدرس، متخصص اینستاگرام، دانشجوی وکالت و بنیان‌گذار آژانس تبلیغاتی ارکان.
+ساکن گنبدکاووس و از نخستین افرادی که فعالیت حرفه‌ای در حوزه مدیریت اینستاگرام را در این شهر آغاز کردم.
+
+مسیر من از سال ۱۳۹۷ شروع شد؛ زمانی که در کنار فعالیت‌های هنری و کارگردانی، وارد دنیای ادمینی شدم. در همان سال‌ها، به دلیل حضور فعال و تاثیرگذار در حوزه تئاتر، موفق به کسب عنوان جوان برتر شهرستان و اخذ امتیاز کارگردانی شدم.
+
+پس از یک دوره فعالیت در فضای هنر، تصمیم گرفتم مسیر حرفه‌ای جدیدی را آغاز کنم. ورود به دنیای کسب‌وکار و مدیریت یک تولیدی سنگ مصنوعی نقطه‌ای بود که مهارت‌های من در مدیریت، مارکتینگ و خلاقیت بیش از قبل شکل گرفت. در همین سال‌ها، با آموزش تخصصی اینستاگرام، بیش از ۸۰ دانشجو را تربیت کردم؛ افرادی که امروز هرکدام وارد پروژه‌های واقعی شده‌اند و مسیر حرفه‌ای خودشان را پیدا کرده‌اند.
+
+فعالیت حرفه‌ای من در اینستاگرام ابتدا به‌صورت فردی و به‌عنوان یکی از نخستین ادمین‌های تخصصی گنبد آغاز شد. اما امروز، پس از سال‌ها تجربه میدانی، پروژه‌های متعدد و مسیر آموزشی گسترده، آژانس تبلیغاتی ارکان را با بیش از ۱۲ نیروی متخصص راه‌اندازی کرده‌ام.
+
+در ارکان باور من همیشه این بوده که:
+«کیفیت، نتیجه‌ی تخصص نیروی انسانی حرفه‌ای است.»
+به همین دلیل در انتخاب اعضای تیم نهایت وسواس و دقت را دارم تا محتوایی که تولید می‌کنیم و پیج‌هایی که مدیریت می‌شوند، در بالاترین سطح کیفیت، استراتژی و خلاقیت باشند.
+
+در حال حاضر، آژانس ارکان به‌عنوان حامی رویدادها و کارگاه‌های آموزشی در شرق استان فعالیت می‌کند و با افتخار از برنامه‌ها و رویدادهای تخصصی حوزه دیجیتال مارکتینگ حمایت می‌کنیم.
+و به‌زودی اولین کارگاه اختصاصی من در گنبدکاووس برگزار خواهد شد؛ کارگاهی عملی، متفاوت و کاملاً کاربردی که نتیجه سال‌ها فعالیت واقعی من در حوزه مدیریت و آموزش اینستاگرام است.
+
+آژانس ارکان فقط یک تیم نیست؛
+یک برند شکل‌گرفته از تجربه، تخصص و نتیجه‌محوری است—برندی که هدفش رشد واقعی و اثرگذار کسب‌وکارهاست.</p>
+
         </ul>
       </div>
       <figure class="card" aria-label="پرتره">
