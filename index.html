@@ -95,9 +95,10 @@ header {
   position: sticky;
   top: 0;
   z-index: 999;
-  background: linear-gradient(180deg, rgba(21,25,34,.95) 0%, rgba(21,25,34,.75) 100%);
-  backdrop-filter: saturate(1.2) blur(6px);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
   border-bottom: 1px solid rgba(255,255,255,.06);
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
 }
 
 /* Container */
@@ -174,6 +175,7 @@ header {
     .section-desc{color:var(--muted)}
 
 /* Brands slider */ .brands{ background:var(--surface); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); overflow:hidden; }
+.brands{ background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:var(--radius); padding:18px; box-shadow:0 8px 24px rgba(0,0,0,0.45); overflow:hidden; border:1px solid rgba(255,255,255,0.04); }
  .brands-track{ display:flex; gap:36px; align-items:center; animation:scroll 30s linear infinite; }
   .brands-track img{height:40px; filter:grayscale(100%) brightness(.95); opacity:.85; transition:.2s} 
   .brands-track img:hover{filter:none; opacity:1} 
@@ -272,6 +274,7 @@ header {
     @media (max-width:900px){.video-list{grid-template-columns:repeat(2,1fr)}}
     @media (max-width:600px){.video-list{grid-template-columns:1fr}}
     .video-card{background:var(--surface); border-radius:var(--radius); padding:12px; box-shadow:var(--shadow)}
+      .video-card{background:linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.015)); border-radius:var(--radius); padding:12px; box-shadow:0 6px 20px rgba(0,0,0,0.45); border:1px solid rgba(255,255,255,0.04)}
     .video-card video{width:100%; aspect-ratio:9/16; object-fit:cover}
     .video-meta{display:flex; align-items:center; justify-content:space-between; margin-top:8px; color:var(--muted); font-size:.95rem}
 
@@ -301,9 +304,10 @@ header {
 .project-card {
   padding: 20px;
   border-radius: 12px;
-  background: #151821;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.2s, box-shadow 0.2s;
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+    border: 1px solid rgba(255,255,255,0.04);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 
@@ -355,6 +359,7 @@ header {
     @media (max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
     @media (max-width:600px){.gallery{grid-template-columns:1fr}}
     .gallery .item{background:var(--surface); border-radius:var(--radius); padding:10px; box-shadow:var(--shadow)}
+      .gallery .item{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015)); border-radius:var(--radius); padding:10px; box-shadow:0 8px 24px rgba(0,0,0,0.45); border:1px solid rgba(255,255,255,0.04)}
     .gallery .item figcaption{color:var(--muted); margin-top:6px; font-size:.95rem}
     .lightbox{
       position:fixed; inset:0; display:none; align-items:center; justify-content:center;
@@ -370,6 +375,7 @@ header {
       min-width:100%; padding:16px;
     }
     .quote{background:var(--surface); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
+      .quote{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015)); border-radius:var(--radius); padding:18px; box-shadow:0 8px 24px rgba(0,0,0,0.45); border:1px solid rgba(255,255,255,0.04)}
     .quote p{margin:0 0 8px}
     .quote .who{color:var(--muted)}
     .dots{display:flex; gap:8px; justify-content:center; margin-top:10px}
@@ -380,7 +386,7 @@ header {
     .contact-links{display:flex; gap:12px; flex-wrap:wrap}
     .contact-links a{background:#1b2230; border:1px solid rgba(255,255,255,.08); padding:10px 14px; border-radius:10px}
     form{
-      background:var(--surface); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow);
+      background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015)); border-radius:var(--radius); padding:18px; box-shadow:0 8px 24px rgba(0,0,0,0.45); border:1px solid rgba(255,255,255,0.04);
     }
     input, textarea{
       width:100%; padding:12px; border-radius:10px; border:1px solid rgba(255,255,255,.12); background:#101522; color:var(--text);
@@ -813,6 +819,7 @@ header {
   <footer aria-label="پاصفحه">
     <div class="container">
       <div>© 2025 Mostafa — تمامی حقوق محفوظ است</div>
+      <div>ساخته‌شده با عشق به مینیمالیسم و فرهنگ</div>
     </div>
   </footer>
 
