@@ -90,32 +90,69 @@
       height: 24px;
     }
 
-    /* Header */
-    header{
-      position:sticky; top:0; z-index:999;
-      background:linear-gradient(180deg, rgba(21,25,34,.95) 0%, rgba(21,25,34,.75) 100%);
-      backdrop-filter:saturate(1.2) blur(6px);
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-    .nav{
-      display:flex; align-items:center; justify-content:space-between; min-height:70px;
-    }
-    .logo{
-      display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.2px;
-    }
-    .logo img{width:36px; height:36px; border-radius:8px}
-    .menu{display:flex; gap:24px; align-items:center}
-    .menu a{
-      color:var(--text); font-weight:600; padding:8px 10px; border-radius:8px; transition:.25s ease;
-    }
-    .menu a:hover{background:rgba(255,255,255,.08)}
-    
-    .menu-toggle{display:none}
-    @media (max-width:900px){
-      .menu-toggle{display:inline-flex; padding:10px; border:1px solid rgba(255,255,255,.12); border-radius:10px}
-      .menu{display:none}
-      .menu.open{display:flex; flex-direction:column; gap:12px; background:var(--surface); padding:12px; border-radius:12px; position:absolute; right:20px; top:70px; box-shadow:var(--shadow)}
-    }
+ /* Header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: linear-gradient(180deg, rgba(21,25,34,.95) 0%, rgba(21,25,34,.75) 100%);
+  backdrop-filter: saturate(1.2) blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+/* Container */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 70px;
+  padding: 0 20px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+.logo img {
+  width: 55px;
+  height: 55px;
+  border-radius: 8px;
+}
+
+/* Menu (همیشه نمایش داده میشه) */
+.menu {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.menu a {
+  color: var(--text);
+  font-weight: 600;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: .25s ease;
+}
+.menu a:hover {
+  background: rgba(255,255,255,.08);
+}
+
+/* دکمه منو کلاً مخفی */
+.menu-toggle {
+  display: none !important;
+}
+
+/* در موبایل هم منو مثل دسکتاپ باقی می‌مونه */
+@media (max-width: 900px) {
+  .menu {
+    flex-wrap: wrap; /* اگر جا کم شد، لینک‌ها به خط بعد برن */
+    justify-content: center;
+  }
+}
+
 
     /* Hero */
     .hero{
@@ -133,61 +170,50 @@
     .section-title{font-size:24px; font-weight:800}
     .section-desc{color:var(--muted)}
 
-/* Brands slider */
-.brands {
+/* Brands slider */ .brands{ background:var(--surface); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); overflow:hidden; }
+ .brands-track{ display:flex; gap:36px; align-items:center; animation:scroll 30s linear infinite; }
+  .brands-track img{height:40px; filter:grayscale(100%) brightness(.95); opacity:.85; transition:.2s} 
+  .brands-track img:hover{filter:none; opacity:1} 
+  @keyframes scroll{ 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+
+/* About two-column */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: var(--gap);
+}
+
+.card {
   background: var(--surface);
   border-radius: var(--radius);
-  padding: 18px;
+  padding: 22px;
   box-shadow: var(--shadow);
-  overflow: hidden;
 }
 
-.brands-track {
-  display: flex;          /* مهم: فلکس برای فاصله و اسکرول */
-  gap: 85px;              /* فاصله بین لوگوها */
-  align-items: center;
+.muted {
+  color: var(--muted);
 }
 
-.brands-track img {
-  height: 40px;
-  filter: grayscale(100%) brightness(.95);
-  opacity: .85;
-  transition: .2s;
-}
-
-.brands-track img:hover {
-  filter: none;
-  opacity: 1;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
+/* حالت موبایل */
+@media (max-width: 900px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
   }
-  100% {
-    transform: translateX(-50%); /* نصف طول track برای لوپ */
+
+  /* اول عکس بیاد */
+  .grid-2 figure {
+    order: -1; /* میاره بالا */
   }
 }
 
-
-    /* About two-column */
-    .grid-2{
-      display:grid; grid-template-columns:1.2fr .8fr; gap:var(--gap);
-    }
-    .card{
-      background:var(--surface); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow);
-    }
-    .muted{color:var(--muted)}
-    @media (max-width:900px){
-      .grid-2{grid-template-columns:1fr}
-    }
 
     /* Services */
     .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:var(--gap)}
     @media (max-width:1100px){.grid-3{grid-template-columns:repeat(2,1fr)}}
     @media (max-width:700px){.grid-3{grid-template-columns:1fr}}
     .service-icon{
-      width:56px; height:56px; border-radius:12px; display:grid; place-items:center;
+      width:50px; height:50px; border-radius:12px; display:grid; place-items:center;
       background:linear-gradient(135deg, var(--brand), var(--brand-2)); color:#091321; font-size:28px; font-weight:800;
     }
     .service h3{margin:10px 0 6px}
@@ -202,11 +228,77 @@
     .video-card video{width:100%; aspect-ratio:9/16; object-fit:cover}
     .video-meta{display:flex; align-items:center; justify-content:space-between; margin-top:8px; color:var(--muted); font-size:.95rem}
 
-    /* Projects */
-    .project{display:grid; grid-template-columns:.9fr 1.1fr; gap:var(--gap)}
-    .project .thumb{background:var(--surface); border-radius:var(--radius); padding:12px; box-shadow:var(--shadow)}
-    .project h3{margin:6px 0}
-    .badge{display:inline-block; padding:6px 10px; border:1px solid rgba(255,255,255,.12); border-radius:999px; color:var(--muted); margin:4px 6px 4px 0; font-size:.9rem}
+/* Grid container */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+/* Background for the section */
+.projects-section {
+  background: #f9f9f9; /* مثل بخش خدمات */
+  padding: 60px 0;
+}
+
+/* Grid container */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+/* Project card */
+.project-card {
+  padding: 20px;
+  border-radius: 12px;
+  background: #151821;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+
+.project-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.15rem;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  color: #c4b8a9;
+}
+
+.badges {
+  margin-top: 14px;
+}
+
+.badge {
+  display: inline-block;
+  margin-right: 6px;
+  margin-bottom: 4px;
+  background: #f0f0f0;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
     @media (max-width:900px){.project{grid-template-columns:1fr}}
 
@@ -264,7 +356,6 @@
     <div class="container nav">
       <div class="logo">
         <img src="assets/logo.png" alt="لوگوی شخصی">
-        <span>Mostafa — Brand Designer</span>
       </div>
       <button class="menu-toggle" aria-label="باز کردن منو">منو</button>
       <nav class="menu" aria-label="ناوبری اصلی">
@@ -302,81 +393,110 @@
           <img loading="lazy" src="assets/brand-04.png" alt="Brand 04">
           <img loading="lazy" src="assets/brand-05.png" alt="Brand 05">
           <img loading="lazy" src="assets/brand-06.png" alt="Brand 06">
+          <img loading="lazy" src="assets/brand-01.png" alt="Brand 01">
+          <img loading="lazy" src="assets/brand-02.png" alt="Brand 02">
+          <img loading="lazy" src="assets/brand-03.png" alt="Brand 03">
+          <img loading="lazy" src="assets/brand-04.png" alt="Brand 04">
+          <img loading="lazy" src="assets/brand-05.png" alt="Brand 05">
+          <img loading="lazy" src="assets/brand-06.png" alt="Brand 06">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About -->
-  <section id="about" aria-labelledby="about-title">
-    <div class="container grid-2">
-      <div class="card">
-        <h2 class="section-title" id="about-title">درباره من</h2>
-        <p class="muted">من مریم ایگدری هستم؛ مدرس، متخصص اینستاگرام، دانشجوی وکالت و بنیان‌گذار آژانس تبلیغاتی ارکان.
-ساکن گنبدکاووس و از نخستین افرادی که فعالیت حرفه‌ای در حوزه مدیریت اینستاگرام را در این شهر آغاز کردم.
-
-مسیر من از سال ۱۳۹۷ شروع شد؛ زمانی که در کنار فعالیت‌های هنری و کارگردانی، وارد دنیای ادمینی شدم. در همان سال‌ها، به دلیل حضور فعال و تاثیرگذار در حوزه تئاتر، موفق به کسب عنوان جوان برتر شهرستان و اخذ امتیاز کارگردانی شدم.
-
-پس از یک دوره فعالیت در فضای هنر، تصمیم گرفتم مسیر حرفه‌ای جدیدی را آغاز کنم. ورود به دنیای کسب‌وکار و مدیریت یک تولیدی سنگ مصنوعی نقطه‌ای بود که مهارت‌های من در مدیریت، مارکتینگ و خلاقیت بیش از قبل شکل گرفت. در همین سال‌ها، با آموزش تخصصی اینستاگرام، بیش از ۸۰ دانشجو را تربیت کردم؛ افرادی که امروز هرکدام وارد پروژه‌های واقعی شده‌اند و مسیر حرفه‌ای خودشان را پیدا کرده‌اند.
-
-فعالیت حرفه‌ای من در اینستاگرام ابتدا به‌صورت فردی و به‌عنوان یکی از نخستین ادمین‌های تخصصی گنبد آغاز شد. اما امروز، پس از سال‌ها تجربه میدانی، پروژه‌های متعدد و مسیر آموزشی گسترده، آژانس تبلیغاتی ارکان را با بیش از ۱۲ نیروی متخصص راه‌اندازی کرده‌ام.
-
-در ارکان باور من همیشه این بوده که:
-«کیفیت، نتیجه‌ی تخصص نیروی انسانی حرفه‌ای است.»
-به همین دلیل در انتخاب اعضای تیم نهایت وسواس و دقت را دارم تا محتوایی که تولید می‌کنیم و پیج‌هایی که مدیریت می‌شوند، در بالاترین سطح کیفیت، استراتژی و خلاقیت باشند.
-
-در حال حاضر، آژانس ارکان به‌عنوان حامی رویدادها و کارگاه‌های آموزشی در شرق استان فعالیت می‌کند و با افتخار از برنامه‌ها و رویدادهای تخصصی حوزه دیجیتال مارکتینگ حمایت می‌کنیم.
-و به‌زودی اولین کارگاه اختصاصی من در گنبدکاووس برگزار خواهد شد؛ کارگاهی عملی، متفاوت و کاملاً کاربردی که نتیجه سال‌ها فعالیت واقعی من در حوزه مدیریت و آموزش اینستاگرام است.
-
-آژانس ارکان فقط یک تیم نیست؛
-یک برند شکل‌گرفته از تجربه، تخصص و نتیجه‌محوری است—برندی که هدفش رشد واقعی و اثرگذار کسب‌وکارهاست.</p>
-
-        </ul>
-      </div>
-      <figure class="card" aria-label="پرتره">
-        <img loading="lazy" src="assets/me.jpg" alt="پرتره مستفا">
-        <figcaption class="muted">طراح برند — Plauen, Saxony</figcaption>
-      </figure>
+<!-- About -->
+<section id="about" aria-labelledby="about-title">
+  <div class="container grid-2">
+    <div class="card">
+      <h2 class="section-title" id="about-title">درباره من</h2>
+      <p class="muted">
+        من مریم ایگدری هستم؛ مدرس و متخصص اینستاگرام، دانشجوی وکالت و بنیان‌گذار آژانس تبلیغاتی ارکان.
+        ساکن گنبدکاووس و از اولین افرادی که فعالیت حرفه‌ای مدیریت اینستاگرام را در این شهر آغاز کردم.
+      </p>
+      <p class="muted">
+        مسیرم از سال ۱۳۹۷ شروع شد؛ زمانی که در کنار فعالیت هنری و کارگردانی، وارد حوزه ادمینی شدم و عنوان جوان برتر شهرستان و امتیاز کارگردانی را به‌دست آوردم.
+        بعد از خداحافظی با دنیای هنر، وارد مسیر کسب‌وکار شدم و مدیریت تولیدی سنگ مصنوعی تجربه‌ای بود که مهارت‌های مدیریتی و مارکتینگی من را چند برابر کرد.
+      </p>
+      <p class="muted">
+        در همین دوران، بیش از ۸۰ دانشجو در حوزه اینستاگرام آموزش دادم که امروز هرکدام وارد پروژه‌های واقعی شده‌اند.
+      </p>
+      <p class="muted">
+        فعالیت حرفه‌ای من در اینستاگرام از سطح فردی آغاز شد اما امروز، پس از سال‌ها تجربه و پروژه‌های متعدد، آژانس تبلیغاتی ارکان را با بیش از ۱۲ نیروی متخصص راه‌اندازی کرده‌ام.
+        باور من در ارکان همیشه این بوده: «کیفیت حاصل نیروی انسانی متخصص است.»
+      </p>
+      <p class="muted">
+        امروز ارکان حامی رویدادها و کارگاه‌های آموزشی شرق استان است و به‌زودی اولین کارگاه اختصاصی من در گنبدکاووس برگزار می‌شود.
+        ارکان فقط یک تیم نیست؛ یک برند نتیجه‌محور است که هدفش ساختن رشد واقعی برای کسب‌وکارهاست.
+      </p>
     </div>
-  </section>
+    <figure class="card" aria-label="پرتره">
+      <img loading="lazy" src="assets/m.jpg" alt="پرتره">
+    </figure>
+  </div>
+</section>
+
 
   <!-- Services -->
   <section id="services" aria-labelledby="services-title">
     <div class="container">
       <div class="section-head">
         <h2 class="section-title" id="services-title">تخصص‌ها و خدمات</h2>
-        <p class="section-desc">برای هر خدمت: آیکون، عنوان و توضیح کوتاه</p>
       </div>
       <div class="grid-3">
         <div class="card service">
-          <div class="service-icon">BR</div>
-          <h3>برندینگ کامل</h3>
-          <p>استراتژی، نام‌گذاری، هویت بصری، راهنمای سبک</p>
+           <img class="service-icon" src="assets/education.svg"/>
+          <h3>آموزش</h3>
+          <p>• آموزش تولید محتوا</p>
+          <p>• آموزش مدیریت پیج</p>
+          <p>• آموزش برندینگ</p>
+          <p>• آموزش سناریونویسی</p>
         </div>
         <div class="card service">
-          <div class="service-icon">LG</div>
-          <h3>لوگو مینیمال</h3>
-          <p>نشان‌های هندسی، مونولاین، سازگار با UI</p>
+          <img class="service-icon" src="assets/education.svg"/>
+          <h3>تولید محتوا</h3>
+          <p>• محتوای اینستاگرام</p>
+          <p>• محتوای متنی</p>
+          <p>• عکاسی و فیلم‌برداری</p>
+          <p>• تدوین و موشن</p>
         </div>
         <div class="card service">
-          <div class="service-icon">3D</div>
-          <h3>آیکون سه‌بعدی</h3>
-          <p>رندر واقع‌گرایانه، متریال سفارشی، ست کامل</p>
+          <img class="service-icon" src="assets/education.svg"/>
+          <h3>مدیریت پیج</h3>
+          <p>• برنامه‌ریزی محتوا</p>
+          <p>• استراتژی رشد</p>
+          <p>• کپشن‌نویسی حرفه‌ای</p>
+          <p>• تعامل و پاسخ‌گویی</p>
+          <p>• تحلیل ماهانه پیج</p>
         </div>
         <div class="card service">
-          <div class="service-icon">UI</div>
-          <h3>UI کیت</h3>
-          <p>دکمه‌ها، کارت‌ها، شبکه‌چین، سیستم رنگ</p>
+          <img class="service-icon" src="assets/education.svg"/>
+          <h3>سناریو نویسی</h3>
+          <p>• سناریو برای کلیپ تبلیغاتی</p>
+          <p>• سناریو معرفی محصول</p>
+          <p>• سناریو سریالی/ریلز</p>
         </div>
         <div class="card service">
-          <div class="service-icon">PK</div>
-          <h3>بسته‌بندی</h3>
-          <p>ماکت، طرح، آماده چاپ، مواد و تکسچر</p>
+          <img class="service-icon" src="assets/education.svg"/>
+          <h3>طراحی لوگو</h3>
+          <p> • لوگو تایپ</p>
+          <p> • لوگو مارک</p>
+          <p> • مینیمال، کلاسیک، ترکیبی</p>
         </div>
         <div class="card service">
-          <div class="service-icon">WD</div>
-          <h3>وب‌سایت سبک</h3>
-          <p>تک‌صفحه‌ای، سئو پایه، دیپلوی سریع</p>
+          <img class="service-icon" src="assets/education.svg"/>
+          <h3>هویت بصری</h3>
+          <p>• پالت رنگ</p>
+          <p>• تایپوگرافی</p>
+          <p>• الگوهای گرافیکی</p>
+          <p>• دفترچه برند (Brand Book)</p>
+        </div>
+           <div class="card service">
+          <img class="service-icon" src="assets/education.svg"/>
+          <h3>طراحی کاور و قالب</h3>
+          <p>• کاور پست</p>
+          <p>• قالب استوری</p>
+          <p>• کاور هایلایت</p>
+          <p>• قالب پست آموزشی/خبری/تک‌عکس</p>
         </div>
       </div>
     </div>
@@ -386,82 +506,121 @@
   <section id="portfolio" aria-labelledby="portfolio-title">
     <div class="container">
       <div class="section-head">
-        <h2 class="section-title" id="portfolio-title">نمونه‌کارها — ویدیوهای عمودی</h2>
-        <p class="section-desc">نمایش کارها با نسبت 9:16</p>
+        <h2 class="section-title" id="portfolio-title">نمونه‌کارها</h2>
       </div>
       <div class="video-list">
         <div class="video-card">
           <video controls preload="metadata" poster="assets/videos/poster-01.jpg">
-            <source src="assets/videos/work-01.mp4" type="video/mp4" />
+            <source src="assets/Arkan-14.mp4" type="video/mp4" />
             مرورگر شما از ویدیو پشتیبانی نمی‌کند.
           </video>
-          <div class="video-meta"><span class="muted">لوگو تایپ — 2024</span><span class="badge">Branding</span></div>
+          <div class="video-meta"><span class="muted">دکتر حانیه رقیمی</div>
         </div>
         <div class="video-card">
           <video controls preload="metadata" poster="assets/videos/poster-02.jpg">
-            <source src="assets/videos/work-02.mp4" type="video/mp4" />
+            <source src="assets/Arkan-13.mp4" type="video/mp4" />
           </video>
-          <div class="video-meta"><span class="muted">آیکون‌های 3D — 2025</span><span class="badge">3D</span></div>
+          <div class="video-meta"><span class="muted">دکتر حانیه رقیمی</div>
         </div>
         <div class="video-card">
           <video controls preload="metadata" poster="assets/videos/poster-03.jpg">
-            <source src="assets/videos/work-03.mp4" type="video/mp4" />
+            <source src="assets/Arkan-15.mp4" type="video/mp4" />
           </video>
-          <div class="video-meta"><span class="muted">UI کیت — 2025</span><span class="badge">UI</span></div>
+          <div class="video-meta"><span class="muted">دکتر علیرضا عرب</div>
         </div>
         <div class="video-card">
           <video controls preload="metadata" poster="assets/videos/poster-04.jpg">
-            <source src="assets/videos/work-04.mp4" type="video/mp4" />
+            <source src="assets/Arkan-16.mp4" type="video/mp4" />
           </video>
-          <div class="video-meta"><span class="muted">بسته‌بندی — 2023</span><span class="badge">Packaging</span></div>
+          <div class="video-meta"><span class="muted">دکتر علیرضا عرب</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects" aria-labelledby="projects-title">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title" id="projects-title">پروژه‌های انجام‌شده</h2>
-        <p class="section-desc">چکیده‌ای از پروژه‌ها، نقش و نتیجه</p>
-      </div>
-      <div class="project">
-        <div class="thumb">
-          <img loading="lazy" src="assets/projects/prj-01.jpg" alt="پروژه Sahra Win — ترکیب خورشید و پنجره">
-        </div>
-        <div>
-          <h3>Sahra Win — سیستم هویت بصری</h3>
-          <p class="muted">لوگو مینیمال با موتیف خورشید، صحرا و پنجره؛ توسعه بسته هویت، آیکون‌ست UI و راهنمای سبک برای کاربردهای وب و چاپ.</p>
-          <div>
-            <span class="badge">Role: Brand Design</span>
-            <span class="badge">Result: +34% CTR</span>
-            <span class="badge">Year: 2025</span>
-          </div>
+<!-- Projects -->
+<section id="projects" aria-labelledby="projects-title">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title" id="projects-title">پروژه‌های انجام‌شده</h2>
+    </div>
+
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>پروژه دکتر علیرضا عرب</h3>
+        <p>برای این پروژه، تمامی محتوای متنی و تصویری به‌صورت حرفه‌ای آماده و منتشر شد.</p>
+        <div class="badges">
         </div>
       </div>
 
-      <div style="height:16px"></div>
-
-      <div class="project">
-        <div class="thumb">
-          <img loading="lazy" src="assets/projects/prj-02.jpg" alt="آیکون‌های 3D — مرکز تماس">
+      <div class="project-card">
+        <h3>پروژه دکتر حانیه رقیمی</h3>
+        <p>تولید محتوای این پروژه با تمرکز بر جذابیت و تعامل مخاطب انجام گرفت تا بیشترین تأثیر را داشته باشد.</p>
+        <div class="badges">
         </div>
-        <div>
-          <h3>Icon Pack 3D — Contact, Info, Discount</h3>
-          <p class="muted">رندر واقع‌گرایانه با متریال‌های سفارشی؛ سازگار با UI، بسته کامل برای وب/اپ و تبلیغات.</p>
-          <div>
-            <span class="badge">Role: 3D Icon</span>
-            <span class="badge">Result: +22% Engagement</span>
-            <span class="badge">Year: 2025</span>
-          </div>
+      </div>
+
+      <div class="project-card">
+        <h3>پروژه ماهان پروتئین</h3>
+        <p>این کسب‌وکار با مدیریت و اجرای کامل توسط تیم ما از مرحله ایده تا رسیدن به عملکرد نهایی توسعه یافت.</p>
+        <div class="badges">
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3>پروژه کارخانه SPND</h3>
+        <p>ما تمامی مراحل راه‌اندازی این کسب‌وکار را طراحی، سازماندهی و اجرا کردیم تا تجربه‌ای یکپارچه ایجاد شود.</p>
+        <div class="badges">
+
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3>پروژه شهر پارچه</h3>
+        <p>تیم ما کسب‌وکار را از مرحله ایده و تحلیل بازار تا ارائه خدمات و مدیریت روزانه به طور کامل راه‌اندازی کرد.</p>
+        <div class="badges">
+
+        </div>
+      </div>
+
+            <div class="project-card">
+        <h3>پروژه تغذیه آرمان ایگدری</h3>
+        <p>مسئولیت شکل‌دهی، سازماندهی و راه‌اندازی کامل این کسب‌وکار به صورت حرفه‌ای بر عهده تیم ما بود.</p>
+        <div class="badges">
+
+        </div>
+      </div>
+
+            <div class="project-card">
+        <h3>پروژه تولیدی  قره باش</h3>
+        <p>این پروژه شامل ایجاد ساختار کسب‌وکار، طراحی فرایندها و اجرای کامل آن بود که توسط تیم ما انجام شد.</p>
+        <div class="badges">
+
+        </div>
+      </div>
+
+            <div class="project-card">
+        <h3>پروژه آرتام</h3>
+        <p>ما تمامی مراحل تولید محتوای این پروژه را برنامه‌ریزی و اجرا کردیم تا نتیجه‌ای متمایز و حرفه‌ای ارائه شود.</p>
+        <div class="badges">
+
+        </div>
+      </div>
+
+            <div class="project-card">
+        <h3>پروژه مهاجرت تحصیلی</h3>
+        <p>تیم ما با تمرکز بر ارزش برند، محتوایی تولید کرد که هم جذاب باشد و هم مخاطب را درگیر کند.</p>
+        <div class="badges">
+
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Certificates -->
-  <section id="certs" aria-labelledby="certs-title">
+  <!--<section id="certs" aria-labelledby="certs-title">
     <div class="container">
       <div class="section-head">
         <h2 class="section-title" id="certs-title">مدارک و دیپلم‌ها</h2>
@@ -489,7 +648,7 @@
   </section>
 
   <!-- Extra About -->
-  <section id="extra-about" aria-labelledby="extra-title">
+  <!--<section id="extra-about" aria-labelledby="extra-title">
     <div class="container grid-2">
       <div class="card">
         <h2 class="section-title" id="extra-title">داستان کاری من</h2>
@@ -506,25 +665,17 @@
   <section id="gallery" aria-labelledby="gallery-title">
     <div class="container">
       <div class="section-head">
-        <h2 class="section-title" id="gallery-title">گالری نمونه‌کار (تصویر)</h2>
-        <p class="section-desc">نمایش بصری پروژه‌ها</p>
+        <h2 class="section-title" id="gallery-title">نمونه کار لوگو</h2>
       </div>
       <div class="gallery" id="work-gallery">
         <figure class="item">
-          <img loading="lazy" src="assets/gallery/gl-01.jpg" alt="نمونه لوگو مینیمال">
-          <figcaption>Minimal Logo — 01</figcaption>
+          <img loading="lazy" src="assets/gl-01.jpg" alt="نمونه لوگو مینیمال">
         </figure>
         <figure class="item">
-          <img loading="lazy" src="assets/gallery/gl-02.jpg" alt="نمونه آیکون سه‌بعدی">
-          <figcaption>3D Icon — 02</figcaption>
+          <img loading="lazy" src="assets/gl-02.jpg" alt="نمونه آیکون سه‌بعدی">
         </figure>
         <figure class="item">
-          <img loading="lazy" src="assets/gallery/gl-03.jpg" alt="سیستم هویت بصری">
-          <figcaption>Brand System — 03</figcaption>
-        </figure>
-        <figure class="item">
-          <img loading="lazy" src="assets/gallery/gl-04.jpg" alt="بسته‌بندی واقع‌گرایانه">
-          <figcaption>Packaging — 04</figcaption>
+          <img loading="lazy" src="assets/gl-03.jpg" alt="سیستم هویت بصری">
         </figure>
       </div>
     </div>
@@ -535,7 +686,6 @@
     <div class="container">
       <div class="section-head">
         <h2 class="section-title" id="testimonials-title">نظرات همکاران</h2>
-        <p class="section-desc">بازخورد کسانی که با من کار کرده‌اند</p>
       </div>
       <div class="testimonials-slider" role="region" aria-label="نظرات">
         <div class="slides">
@@ -565,24 +715,23 @@
 <section id="contact" aria-labelledby="contact-title">
   <div class="container">
     <div class="section-head">
-      <h2 class="section-title" id="contact-title">تماس با من</h2>
-      <p class="section-desc">راه‌های تماس با من</p>
+      <h2 class="section-title" id="contact-title">تماس با ما</h2>
     </div>
     <div class="contact-buttons">
       <a href="mailto:youremail@example.com" class="btn-contact">
-        <img src="assets/icons/email.svg" alt="ایمیل" class="icon">
+        <img src="assets/gmail.svg" alt="ایمیل" class="icon">
         ایمیل
       </a>
       <a href="tel:+989123456789" class="btn-contact">
-        <img src="assets/icons/phone.svg" alt="تلفن" class="icon">
+        <img src="assets/phone-call.svg" alt="تلفن" class="icon">
         تلفن
       </a>
       <a href="https://instagram.com/yourprofile" target="_blank" class="btn-contact">
-        <img src="assets/icons/instagram.svg" alt="اینستاگرام" class="icon">
+        <img src="assets/instagram.svg" alt="اینستاگرام" class="icon">
         اینستاگرام
       </a>
       <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="btn-contact">
-        <img src="assets/icons/linkedin.svg" alt="لینکدین" class="icon">
+        <img src="assets/linkedin.svg" alt="لینکدین" class="icon">
         لینکدین
       </a>
     </div>
