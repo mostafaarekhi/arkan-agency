@@ -173,11 +173,43 @@ header {
     .section-title{font-size:24px; font-weight:800}
     .section-desc{color:var(--muted)}
 
-/* Brands slider */ .brands{ background:var(--surface); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); overflow:hidden; }
- .brands-track{ display:flex; gap:36px; align-items:center; animation:scroll 30s linear infinite; }
-  .brands-track img{height:40px; filter:grayscale(100%) brightness(.95); opacity:.85; transition:.2s} 
-  .brands-track img:hover{filter:none; opacity:1} 
-  @keyframes scroll{ 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+/* Brands section */
+.brands {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+/* بدون حرکت – فقط گرید */
+.brands-track {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 24px;
+  align-items: center;
+  justify-items: center;
+}
+
+.brands-track img {
+  height: 45px;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(.95);
+  opacity: .85;
+  transition: .2s;
+}
+
+.brands-track img:hover {
+  filter: none;
+  opacity: 1;
+}
+
+/* موبایل: هر ردیف ۲ تا لوگو */
+@media (max-width: 600px) {
+  .brands-track {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 
 
 /* About two-column */
@@ -390,12 +422,6 @@ header {
       <div class="brands" role="region" aria-label="لوگوهای برندها">
         <div class="brands-track">
           <!-- تکرار لوگوها برای اسکرول پیوسته -->
-          <img loading="lazy" src="assets/brand-01.png" alt="Brand 01">
-          <img loading="lazy" src="assets/brand-02.png" alt="Brand 02">
-          <img loading="lazy" src="assets/brand-03.png" alt="Brand 03">
-          <img loading="lazy" src="assets/brand-04.png" alt="Brand 04">
-          <img loading="lazy" src="assets/brand-05.png" alt="Brand 05">
-          <img loading="lazy" src="assets/brand-06.png" alt="Brand 06">
           <img loading="lazy" src="assets/brand-01.png" alt="Brand 01">
           <img loading="lazy" src="assets/brand-02.png" alt="Brand 02">
           <img loading="lazy" src="assets/brand-03.png" alt="Brand 03">
