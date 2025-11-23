@@ -151,7 +151,7 @@ header {
     flex-wrap: nowrap;/* اگر جا کم شد، لینک‌ها به خط بعد برن */
     gap:16px;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: ;
     justify-content: center;
   }
 }
@@ -173,43 +173,11 @@ header {
     .section-title{font-size:24px; font-weight:800}
     .section-desc{color:var(--muted)}
 
-/* Brands section */
-.brands {
-  background: var(--surface);
-  border-radius: var(--radius);
-  padding: 18px;
-  box-shadow: var(--shadow);
-}
-
-/* بدون حرکت – فقط گرید */
-.brands-track {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 24px;
-  align-items: center;
-  justify-items: center;
-}
-
-.brands-track img {
-  height: 45px;
-  object-fit: contain;
-  filter: grayscale(100%) brightness(.95);
-  opacity: .85;
-  transition: .2s;
-}
-
-.brands-track img:hover {
-  filter: none;
-  opacity: 1;
-}
-
-/* موبایل: هر ردیف ۲ تا لوگو */
-@media (max-width: 600px) {
-  .brands-track {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
+/* Brands slider */ .brands{ background:var(--surface); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); overflow:hidden; }
+ .brands-track{ display:flex; gap:36px; align-items:center; animation:scroll 30s linear infinite; }
+  .brands-track img{height:40px; filter:grayscale(100%) brightness(.95); opacity:.85; transition:.2s} 
+  .brands-track img:hover{filter:none; opacity:1} 
+  @keyframes scroll{ 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
 
 
 /* About two-column */
@@ -243,16 +211,60 @@ header {
 }
 
 
-    /* Services */
-    .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:var(--gap)}
-    @media (max-width:1100px){.grid-3{grid-template-columns:repeat(2,1fr)}}
-    @media (max-width:700px){.grid-3{grid-template-columns:1fr}}
-    .service-icon{
-      width:50px; height:50px; border-radius:12px; display:grid; place-items:center;
-      background:linear-gradient(135deg, var(--brand), var(--brand-2)); color:#091321; font-size:28px; font-weight:800;
-    }
-    .service h3{margin:10px 0 6px}
-    .service p{color:var(--muted); margin:0}
+/* Services */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap, 2rem);
+}
+
+@media (max-width: 1100px) {
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 700px) {
+  .grid-3 { grid-template-columns: 1fr; }
+}
+
+/* کارت‌ها */
+.card.service {
+  background: #151821;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* هدر کارت (آیکون + عنوان) */
+.service-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.service-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain; /* فقط خود آیکون نمایش داده میشه */
+  border-radius: 0;    /* گوشه‌ها صاف میشن */
+  background: none;    /* بک‌گراند حذف میشه */
+}
+
+
+.service h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+/* متن خدمات */
+.service p {
+  color: var(--muted, #666);
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+}
+
 
     /* Vertical videos */
     .video-list{display:grid; grid-template-columns:repeat(4,1fr); gap:var(--gap)}
@@ -405,7 +417,7 @@ header {
   <!-- Hero -->
   <section id="hero" class="hero" aria-labelledby="hero-title">
     <div class="container">
-      <h1 id="hero-title">شرکت تبلیغاتی آرکان</h1>
+      <h1 id="hero-title">شرکت تبلیغاتی آرکان گنبد</h1>
 طراح استراتژی محتوا و هویت دیجیتال، با تمرکز بر رشد واقعی برندها در اینستاگرام.<br>
 به کسب‌وکارها کمک می‌کنم پیام و هویت‌شان دقیق و حرفه‌ای دیده شود تا اثرگذاری واقعی داشته باشد.<div class="cta">
         <a class="btn" href="#portfolio" aria-label="مشاهده نمونه‌کارها">مشاهده نمونه‌کارها</a>
@@ -422,6 +434,12 @@ header {
       <div class="brands" role="region" aria-label="لوگوهای برندها">
         <div class="brands-track">
           <!-- تکرار لوگوها برای اسکرول پیوسته -->
+          <img loading="lazy" src="assets/brand-01.png" alt="Brand 01">
+          <img loading="lazy" src="assets/brand-02.png" alt="Brand 02">
+          <img loading="lazy" src="assets/brand-03.png" alt="Brand 03">
+          <img loading="lazy" src="assets/brand-04.png" alt="Brand 04">
+          <img loading="lazy" src="assets/brand-05.png" alt="Brand 05">
+          <img loading="lazy" src="assets/brand-06.png" alt="Brand 06">
           <img loading="lazy" src="assets/brand-01.png" alt="Brand 01">
           <img loading="lazy" src="assets/brand-02.png" alt="Brand 02">
           <img loading="lazy" src="assets/brand-03.png" alt="Brand 03">
@@ -465,71 +483,94 @@ header {
 </section>
 
 
-  <!-- Services -->
-  <section id="services" aria-labelledby="services-title">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title" id="services-title">تخصص‌ها و خدمات</h2>
-      </div>
-      <div class="grid-3">
-        <div class="card service">
-           <img class="service-icon" src="assets/education.svg"/>
-          <h3>آموزش</h3>
-          <p>• آموزش تولید محتوا</p>
-          <p>• آموزش مدیریت پیج</p>
-          <p>• آموزش برندینگ</p>
-          <p>• آموزش سناریونویسی</p>
-        </div>
-        <div class="card service">
-          <img class="service-icon" src="assets/education.svg"/>
-          <h3>تولید محتوا</h3>
-          <p>• محتوای اینستاگرام</p>
-          <p>• محتوای متنی</p>
-          <p>• عکاسی و فیلم‌برداری</p>
-          <p>• تدوین و موشن</p>
-        </div>
-        <div class="card service">
-          <img class="service-icon" src="assets/education.svg"/>
-          <h3>مدیریت پیج</h3>
-          <p>• برنامه‌ریزی محتوا</p>
-          <p>• استراتژی رشد</p>
-          <p>• کپشن‌نویسی حرفه‌ای</p>
-          <p>• تعامل و پاسخ‌گویی</p>
-          <p>• تحلیل ماهانه پیج</p>
-        </div>
-        <div class="card service">
-          <img class="service-icon" src="assets/education.svg"/>
-          <h3>سناریو نویسی</h3>
-          <p>• سناریو برای کلیپ تبلیغاتی</p>
-          <p>• سناریو معرفی محصول</p>
-          <p>• سناریو سریالی/ریلز</p>
-        </div>
-        <div class="card service">
-          <img class="service-icon" src="assets/education.svg"/>
-          <h3>طراحی لوگو</h3>
-          <p> • لوگو تایپ</p>
-          <p> • لوگو مارک</p>
-          <p> • مینیمال، کلاسیک، ترکیبی</p>
-        </div>
-        <div class="card service">
-          <img class="service-icon" src="assets/education.svg"/>
-          <h3>هویت بصری</h3>
-          <p>• پالت رنگ</p>
-          <p>• تایپوگرافی</p>
-          <p>• الگوهای گرافیکی</p>
-          <p>• دفترچه برند (Brand Book)</p>
-        </div>
-           <div class="card service">
-          <img class="service-icon" src="assets/education.svg"/>
-          <h3>طراحی کاور و قالب</h3>
-          <p>• کاور پست</p>
-          <p>• قالب استوری</p>
-          <p>• کاور هایلایت</p>
-          <p>• قالب پست آموزشی/خبری/تک‌عکس</p>
-        </div>
-      </div>
+<!-- Services -->
+<section id="services" aria-labelledby="services-title">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title" id="services-title">تخصص‌ها و خدمات</h2>
     </div>
-  </section>
+    <div class="grid-3">
+      
+      <div class="card service">
+        <div class="service-header">
+           <img class="service-icon" src="assets/education.svg" alt="آموزش"/>
+          <h3>آموزش</h3>
+        </div>
+        <p>• آموزش تولید محتوا</p>
+        <p>• آموزش مدیریت پیج</p>
+        <p>• آموزش برندینگ</p>
+        <p>• آموزش سناریونویسی</p>
+      </div>
+      
+      <div class="card service">
+        <div class="service-header">
+           <img class="service-icon" src="assets/content.svg" alt="آموزش"/>
+          <h3>تولید محتوا</h3>
+        </div>
+        <p>• محتوای اینستاگرام</p>
+        <p>• محتوای متنی</p>
+        <p>• عکاسی و فیلم‌برداری</p>
+        <p>• تدوین و موشن</p>
+      </div>
+      
+      <div class="card service">
+        <div class="service-header">
+           <img class="service-icon" src="assets/profile.svg" alt="آموزش"/>
+          <h3>مدیریت پیج</h3>
+        </div>
+        <p>• برنامه‌ریزی محتوا</p>
+        <p>• استراتژی رشد</p>
+        <p>• کپشن‌نویسی حرفه‌ای</p>
+        <p>• تعامل و پاسخ‌گویی</p>
+        <p>• تحلیل ماهانه پیج</p>
+      </div>
+      
+      <div class="card service">
+        <div class="service-header">
+           <img class="service-icon" src="assets/text-box.svg" alt="آموزش"/>
+          <h3>سناریو نویسی</h3>
+        </div>
+        <p>• سناریو برای کلیپ تبلیغاتی</p>
+        <p>• سناریو معرفی محصول</p>
+        <p>• سناریو سریالی/ریلز</p>
+      </div>
+      
+      <div class="card service">
+        <div class="service-header">
+           <img class="service-icon" src="assets/logo.svg" alt="آموزش"/>
+          <h3>طراحی لوگو</h3>
+        </div>
+        <p>• لوگو تایپ</p>
+        <p>• لوگو مارک</p>
+        <p>• مینیمال، کلاسیک، ترکیبی</p>
+      </div>
+      
+      <div class="card service">
+        <div class="service-header">
+           <img class="service-icon" src="assets/eye.svg" alt="آموزش"/>
+          <h3>هویت بصری</h3>
+        </div>
+        <p>• پالت رنگ</p>
+        <p>• تایپوگرافی</p>
+        <p>• الگوهای گرافیکی</p>
+        <p>• دفترچه برند (Brand Book)</p>
+      </div>
+      
+      <div class="card service">
+        <div class="service-header">
+           <img class="service-icon" src="assets/layout.svg" alt="آموزش"/>
+          <h3>طراحی کاور و قالب</h3>
+        </div>
+        <p>• کاور پست</p>
+        <p>• قالب استوری</p>
+        <p>• کاور هایلایت</p>
+        <p>• قالب پست آموزشی/خبری/تک‌عکس</p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
 
   <!-- Portfolio videos -->
   <section id="portfolio" aria-labelledby="portfolio-title">
