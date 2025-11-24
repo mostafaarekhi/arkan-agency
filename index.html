@@ -193,7 +193,7 @@ header {
  .brands-track{ display:flex; gap:36px; align-items:center; animation:scroll 30s linear infinite; }
   .brands-track img{height:40px; filter:grayscale(100%) brightness(.95); opacity:.85; transition:.2s} 
   .brands-track img:hover{filter:none; opacity:1} 
-  @keyframes scroll{ 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+  @keyframes scroll{ 0%{transform:translateX(0)} 100%{transform:translateX(50%)} }
 
 
 /* About two-column */
@@ -543,7 +543,7 @@ header {
       </p>
     </div>
     <figure class="card" aria-label="پرتره">
-      <img loading="lazy" src="assets/m.jpg" alt="پرتره">
+      <img loading="lazy" src="assets/me.jpg" alt="پرتره">
     </figure>
   </div>
 </section>
@@ -965,7 +965,7 @@ header {
     };
     const go = (i)=>{
       current = i;
-      slidesWrap.style.transform = `translateX(-${i*100}%)`;
+      slidesWrap.style.transform = `translateX(${i*100}%)`;
       renderDots();
     };
     renderDots();
