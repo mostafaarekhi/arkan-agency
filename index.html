@@ -29,7 +29,7 @@
     line-height: 1.8;
   }
     :root{
-      --bg:#0f1115;
+      --bg: url('assets/banner-background.jpg');
       --surface:#151922;
       --text:#e9eef7;
       --muted:#c5b9aa;
@@ -37,7 +37,7 @@
       --brand-2:#3e68a1;
       --accent:#f2b66a;
       --danger:#ff6b6b;
-      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --shadow:0 10px 30px rgba(22, 22, 22, 0.35);
       --radius:14px;
       --container:1200px;
       --gap:22px;
@@ -189,7 +189,7 @@ header {
     .section-desc{color:var(--muted)}
 
 /* Brands slider */ .brands{ background:var(--surface); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); overflow:hidden; }
-.brands{ background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:var(--radius); padding:18px; box-shadow:0 8px 24px rgba(0,0,0,0.45); overflow:hidden; border:1px solid rgba(255,255,255,0.04); }
+.brands{ background: #151821; border-radius:var(--radius); padding:18px; box-shadow:0 8px 24px rgba(0,0,0,0.45); overflow:hidden; border:1px solid rgba(255,255,255,0.04); }
  .brands-track{ display:flex; gap:36px; align-items:center; animation:scroll 20s linear infinite; }
   .brands-track img{height:40px; filter:grayscale(100%) brightness(.95); opacity:.85; transition:.2s} 
   .brands-track img:hover{filter:none; opacity:1} 
@@ -288,7 +288,7 @@ header {
     @media (max-width:900px){.video-list{grid-template-columns:repeat(2,1fr)}}
     @media (max-width:600px){.video-list{grid-template-columns:1fr}}
     .video-card{background:var(--surface); border-radius:var(--radius); padding:12px; box-shadow:var(--shadow)}
-      .video-card{background:linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.015)); border-radius:var(--radius); padding:12px; box-shadow:0 6px 20px rgba(0,0,0,0.45); border:1px solid rgba(255,255,255,0.04)}
+      .video-card{background:#151821; border-radius:var(--radius); padding:12px; box-shadow:0 6px 20px rgba(0,0,0,0.45); border:1px solid rgba(255,255,255,0.04)}
     .video-card video{width:100%; aspect-ratio:9/16; object-fit:cover}
     .video-meta{display:flex; align-items:center; justify-content:space-between; margin-top:8px; color:var(--muted); font-size:.95rem}
 
@@ -373,7 +373,7 @@ header {
     @media (max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
     @media (max-width:600px){.gallery{grid-template-columns:1fr}}
     .gallery .item{background:var(--surface); border-radius:var(--radius); padding:10px; box-shadow:var(--shadow)}
-      .gallery .item{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015)); border-radius:var(--radius); padding:10px; box-shadow:0 8px 24px rgba(0,0,0,0.45); border:1px solid rgba(255,255,255,0.04)}
+      .gallery .item{background:#151821; border-radius:var(--radius); padding:10px; box-shadow:0 8px 24px rgba(0,0,0,0.45); border:1px solid rgba(255,255,255,0.04)}
     .gallery .item figcaption{color:var(--muted); margin-top:6px; font-size:.95rem}
     .lightbox{
       position:fixed; inset:0; display:none; align-items:center; justify-content:center;
@@ -404,10 +404,7 @@ header {
 
 /* Quote card */
 .quote{
-  background:linear-gradient(180deg,
-    rgba(255,255,255,0.03),
-    rgba(255,255,255,0.015)
-  );
+  background:#151821;
   border-radius:var(--radius);
   padding:18px;
   box-shadow:0 8px 24px rgba(0,0,0,0.45);
@@ -442,19 +439,74 @@ header {
   background:var(--brand);
 }
 
-    /* Contact */
-    .contact-links{display:flex; gap:12px; flex-wrap:wrap}
-    .contact-links a{background:#f80202; border:1px solid rgba(255,255,255,.08); padding:10px 14px; border-radius:10px}
-    form{
-      background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015)); border-radius:var(--radius); padding:18px; box-shadow:0 8px 24px rgba(0,0,0,0.45); border:1px solid rgba(255,255,255,0.04);
-    }
-    input, textarea{
-      width:100%; padding:12px; border-radius:10px; border:1px solid rgba(255,255,255,.12); background:#101522; color:var(--text);
-      margin-bottom:10px;
-    }
-    input::placeholder, textarea::placeholder{color:#9a7c8a}
-    .two{display:grid; grid-template-columns:1fr 1fr; gap:12px}
-    @media (max-width:700px){.two{grid-template-columns:1fr}}
+/* Contact Section */
+.contact-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* دو ستون در دسکتاپ */
+  gap: 12px;
+}
+
+/* لینک‌های تماس */
+.btn-contact {
+  background: #151821; /* قرمز روشن */
+  border: 1px solid rgba(255,255,255,.08);
+  padding: 10px 14px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  color: #fff; /* متن سفید */
+}
+
+/* متن داخل لینک */
+.contact-text {
+  display: flex;
+  flex-direction: column;
+}
+
+/* فرم تماس */
+form {
+  background: #151821; /* سرمه‌ای خیلی تیره */
+  border-radius: var(--radius, 10px); /* اگر متغیر تعریف نشده، 10px */
+  padding: 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* فیلدهای ورودی */
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: #101522; /* آبی‌ـمشکی تیره */
+  color: var(--text, #fff); /* اگر متغیر تعریف نشده، سفید */
+  margin-bottom: 10px;
+}
+
+/* Placeholder */
+input::placeholder, textarea::placeholder {
+  color: #9a7c8a;
+}
+
+/* دو ستون */
+.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* در موبایل یک ستون */
+@media (max-width:700px) {
+  .contact-buttons {
+    grid-template-columns: 1fr; /* همه زیر هم */
+  }
+  .two {
+    grid-template-columns: 1fr;
+  }
+}
+
 
     /* Footer */
     footer{
